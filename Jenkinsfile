@@ -14,7 +14,7 @@ pipeline {
         }
         stage('CD') {
             steps {
-                sh 'docker run -d -p 8000:8000'
+                sh 'docker run -d -p 8000:8000 hossam/django_cicd:1.0'
             }
         }
     }
