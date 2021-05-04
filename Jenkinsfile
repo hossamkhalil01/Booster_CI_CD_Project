@@ -16,7 +16,14 @@ pipeline {
             steps {
                 sh 'docker run -d -p 8000:8000 hossam/django_cicd:1.0'
             }
+            
+            post{
+            	success{
+            		slackSend (color:"#52a832", message: "CICD cycle completed successfully")
+            	}
+            }
         }
+        
     }
 }
 
